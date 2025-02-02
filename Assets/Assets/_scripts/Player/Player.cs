@@ -50,7 +50,7 @@ namespace Space.FSM
             JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
             InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
             LandState = new PlayerLandState(this, StateMachine, playerData, "land");
-            CarryState = new PlayerCarryState(this, StateMachine, playerData, "carrying");
+            CarryState = new PlayerCarryState(this, StateMachine, playerData, "carry");
 
 
         }

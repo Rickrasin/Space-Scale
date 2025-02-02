@@ -1,14 +1,14 @@
 using Space.FSM;
 using Space.Objects;
-using System;
 using UnityEngine;
 
 public class PlayerCarryState : PlayerAbilityState
 {
+    private Box currentBox;
+    private bool isCarrying;
 
-    private Box BoxScript;
-
-    public PlayerCarryState(PlayerScript player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerCarryState(PlayerScript player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
+        : base(player, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -16,25 +16,60 @@ public class PlayerCarryState : PlayerAbilityState
     {
         base.Enter();
 
-        BoxScript = Interaction.GetInteractable<Box>();
+        Movement.SetVelocityX(0);
 
-        Debug.Log(BoxScript);
-
-        if (BoxScript != null)
+        if (currentBox == null)
         {
-            if (BoxScript.isCarrying)
+            currentBox = Interaction.GetInteractable<Box>();
+            isCarrying = true;
+        }
+
+        if (currentBox != null)
+        {
+            if (currentBox.isCarrying)
             {
-                Debug.Log("Executado Release");
-                BoxScript.Release();
+                currentBox.Release();
+                AnimHandler.AnimatorSetBoolValue("isCarrying", false);
+                currentBox = null;
             }
-            else if (BoxScript.canCarry && !BoxScript.isCarrying)
+            else if (currentBox.canCarry && !currentBox.isCarrying)
             {
-                Debug.Log("Executado Take");
-                BoxScript.Take(player.transform);
-                BoxScript.gameObject.GetComponent<Rigidbody2D>().MovePosition(player.transform.position + (Vector3)playerData.CarryPosOffset);
+                AnimHandler.AnimatorSetBoolValue("isCarrying", true);
+
+                Vector2 offset = new Vector2(
+                    Movement.FacingDirection < 1 ? -playerData.CarryPosOffset.y : playerData.CarryPosOffset.y,
+                    playerData.CarryPosOffset.y);
+
+                currentBox.Take(player.transform, offset, playerData.movementVelocity + playerData.drag, playerData.carryTime);
+            }
+        }
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        Movement.SetVelocityX(0);
+
+        if (currentBox != null)
+        {
+            float diff = currentBox.transform.position.x - player.transform.position.x;
+            int desiredDirection = diff > 0 ? 1 : -1;
+
+            if (Movement.FacingDirection != desiredDirection)
+            {
+                Movement.Flip();
             }
         }
 
+        if (Time.time > startTime + playerData.carryTime)
+        {
+            if (currentBox == null)
+            {
+                isCarrying = false;
+            }
+            isAbilityDone = true;
+        }
     }
 
     public override void Exit()
@@ -42,19 +77,6 @@ public class PlayerCarryState : PlayerAbilityState
         base.Exit();
     }
 
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-
-        if (Time.time > startTime + playerData.carryTime)
-        {
-            isAbilityDone = true;
-        }
-
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-    }
+    public bool IsCarrying() => isCarrying;
 }
+

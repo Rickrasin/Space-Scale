@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - GameManager
+  - UIManager
   layers:
   - Default
   - TransparentFX
@@ -12,8 +14,8 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - ground
+  - Player
+  - Ground
   - 
   - Interaction
   - 
@@ -49,6 +51,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3697266331
+    locked: 0
+  - name: Hud
+    uniqueID: 1407239357
     locked: 0
   m_RenderingLayers:
   - Default

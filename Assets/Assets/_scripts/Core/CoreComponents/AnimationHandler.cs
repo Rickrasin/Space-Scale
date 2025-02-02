@@ -115,12 +115,17 @@ namespace Space.CoreSystem
         {
             AnimatorStateInfo stateInfo = PlayerAnimator.GetCurrentAnimatorStateInfo(layer);
 
-            // Verifica se a anima��o atual � a que buscamos,
-            // se o normalizedTime passou de 1 e n�o est� em transi��o.
+            
+
+            // Verifica se a animação atual é a que buscamos,
+            // se o normalizedTime passou do threshold (0.99) e não está em transição.
             return stateInfo.IsName(animationName)
-                   && stateInfo.normalizedTime >= 1f
+                   && stateInfo.normalizedTime >= 0.99f
                    && !PlayerAnimator.IsInTransition(layer);
+
+           
         }
+
 
         #endregion
 

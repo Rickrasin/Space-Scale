@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95afb116162c1ec46aa7856ec7d75774, type: 3}
   m_Name: playerData
   m_EditorClassIdentifier: 
-  movementVelocity: 10
-  jumpVelocity: 20
+  movementVelocity: 6
+  jumpVelocity: 14
   amountOfJumps: 1
-  wallJumpVelocity: 20
-  wallJumpTime: 0.4
-  wallJumpAngle: {x: 1, y: 2}
   coyoteTime: 0.2
   variableJumpHeightMultiplier: 0.5
   CarryPosOffset: {x: 1, y: 1}
-  carryTime: 0.2
+  carryJumpVelocity: 6
+  carryMovementVelocity: 4
+  drag: 6
+  smoothTime: 0.3
+  carryTime: 0.3
   Debug: 1

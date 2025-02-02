@@ -91,11 +91,15 @@ namespace Space.FSM
             }
             else
             {
-                Movement?.CheckIfShouldFlip(xInput);
+
+                if (!player.CarryState.IsCarrying())
+                {
+                    Movement?.CheckIfShouldFlip(xInput);
+                }
                 Movement?.SetVelocityX(playerData.movementVelocity * xInput);
 
-                AnimHandler.AnimatorSetFloatValue("yVelocity", Movement.CurrentVelocity.y);
-                AnimHandler.AnimatorSetFloatValue("xVelocity", Mathf.Abs(Movement.CurrentVelocity.x));
+                //AnimHandler.AnimatorSetFloatValue("yVelocity", Movement.CurrentVelocity.y);
+                //AnimHandler.AnimatorSetFloatValue("xVelocity", Mathf.Abs(Movement.CurrentVelocity.x));
             }
 
         }

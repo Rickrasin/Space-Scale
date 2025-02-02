@@ -9,13 +9,8 @@ public class PlayerData : ScriptableObject
     public float movementVelocity = 10f;
 
     [Header("Jump State")]
-    public float jumpVelocity = 15f;
+    public float jumpVelocity = 12f;
     public int amountOfJumps = 1;
-
-    [Header("Wall Jump State")]
-    public float wallJumpVelocity = 20;
-    public float wallJumpTime = 0.4f;
-    public Vector2 wallJumpAngle = new Vector2(1, 2);
 
     [Header("In Air State")]
     public float coyoteTime = 0.2f;
@@ -23,6 +18,13 @@ public class PlayerData : ScriptableObject
 
     [Header("Carry State")]
     public Vector2 CarryPosOffset = new Vector2(1, 1);
+
+    public float carryJumpVelocity = 8f;
+    public float carryMovementVelocity = 7f;
+
+    public float drag = -0.8f;
+
+    public float smoothTime = 0.3f;
     public float carryTime = 0.2f;
 
 

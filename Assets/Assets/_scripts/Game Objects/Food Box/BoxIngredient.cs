@@ -10,7 +10,7 @@ namespace Space.Objects
 
         protected override void Awake()
         {
-            base.Awake(); // Chama o Awake() da classe pai (Box)
+            base.Awake();
         }
 
         void Start()
@@ -22,7 +22,7 @@ namespace Space.Objects
         {
             if (spriteIngredient == null)
             {
-                spriteRenderer.color = Color.gray; // Placeholder sem precisar de textura
+                spriteRenderer.color = Color.gray;
             }
             else
             {

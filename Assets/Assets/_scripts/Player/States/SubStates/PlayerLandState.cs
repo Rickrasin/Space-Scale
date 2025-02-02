@@ -20,7 +20,16 @@ namespace Space.FSM
         {
             base.LogicUpdate();
 
-            isAnimationFinished = AnimHandler.HasAnimationFinished(animBoolName, 0);
+            if (player.CarryState.IsCarrying())
+            {
+
+                isAnimationFinished = AnimHandler.HasAnimationFinished("LandCarry", 0);
+            }
+            else
+            {
+                isAnimationFinished = AnimHandler.HasAnimationFinished("Land", 0);
+
+            }
 
             if (!isExitingState)
             {

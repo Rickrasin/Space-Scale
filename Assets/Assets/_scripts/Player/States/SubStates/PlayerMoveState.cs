@@ -29,9 +29,14 @@ namespace Space.FSM
         {
             base.LogicUpdate();
 
-            Movement?.CheckIfShouldFlip(xInput);
+            if (!player.CarryState.IsCarrying())
+            {
 
-            Movement?.SetVelocityX(playerData.movementVelocity * xInput);
+                Movement?.CheckIfShouldFlip(xInput);
+            }
+
+            float moveVelocity = player.CarryState.IsCarrying() ? playerData.carryMovementVelocity : playerData.movementVelocity;
+            Movement?.SetVelocityX(moveVelocity * xInput);
 
             if (!isExitingState)
             {

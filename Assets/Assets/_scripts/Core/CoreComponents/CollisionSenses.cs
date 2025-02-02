@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Space.CoreSystem
 {
@@ -17,8 +17,10 @@ namespace Space.CoreSystem
         }
 
         [SerializeField] private Transform groundCheck;
+        [SerializeField] private bool Debug;
 
-        [SerializeField] private float groundCheckRadius;
+
+        [SerializeField] private float groundCheckRadius = 0.2f;
 
         [SerializeField] private LayerMask whatIsGround;
 
@@ -29,6 +31,16 @@ namespace Space.CoreSystem
             get => Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsGround);
         }
 
-    }
+        private void OnDrawGizmos()
+        {
+            if (Debug)
+            {
+                if (groundCheck == null) return;
 
+                Gizmos.color = Ground ? Color.green : Color.red;
+                Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+
+            }
+        }
+    }
 }

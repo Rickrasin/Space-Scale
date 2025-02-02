@@ -86,15 +86,16 @@ namespace Space.FSM
 
 
             primaryActionInput = player.InputHandler.AttackInputs[0];
-            if (InteractionInput)
-            {
-                Debug.Log("Executei");
-                stateMachine.ChangeState(player.CarryState); ;
-            }
+
 
             if (jumpInput && player.JumpState.CanJump())
             {
                 stateMachine.ChangeState(player.JumpState);
+            }
+            else if (InteractionInput && Interaction.GetInteractable<Box>())
+            {
+                Movement.SetVelocityX(0);
+                stateMachine.ChangeState(player.CarryState); ;
             }
             else if (!isGrounded)
             {

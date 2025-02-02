@@ -16,7 +16,9 @@ namespace Space.FSM
         {
             base.Enter();
             player.InputHandler.UseJumpInput();
-            Movement?.SetVelocityY(playerData.jumpVelocity);
+
+            Movement?.SetVelocityY(player.CarryState.IsCarrying() ? playerData.carryJumpVelocity : playerData.jumpVelocity);
+
             isAbilityDone = true;
             amountOfJumpsLeft--;
             player.InAirState.SetIsJumping();
