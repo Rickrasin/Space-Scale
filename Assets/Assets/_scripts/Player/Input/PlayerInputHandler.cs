@@ -16,8 +16,11 @@ public class PlayerInputHandler : MonoBehaviour
     public int NormInputY { get; private set; }
     public bool JumpInput { get; private set; }
     public bool JumpInputStop { get; private set; }
+
     public bool InteractionInput { get; private set; }
     public bool InteractionInputStop { get; private set; }
+
+
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
 

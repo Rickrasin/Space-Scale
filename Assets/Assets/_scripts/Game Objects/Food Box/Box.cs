@@ -2,18 +2,17 @@
 
 namespace Space.Objects
 {
-    public class Box : MonoBehaviour
+    public class Box : MonoBehaviour, ICarryable
     {
         protected Rigidbody2D rb;
         protected SpriteRenderer spriteRenderer;
         private Transform player;
 
         private Vector2 offset;
-        [SerializeField] private float followSpeed = 10f; // Pode ser ajustado no Inspector
+        private bool canCarry = true;
+        [SerializeField] private float followSpeed = 10f;
 
-        public bool canCarry { get; private set; } = true;
-        public bool isCarrying { get; private set; }
-
+        private bool isCarrying;
         private bool isRising = false;
         private float riseTimer = 0f;
         private float carryDuration = 0f;
@@ -26,40 +25,40 @@ namespace Space.Objects
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        public void Take(Transform jogadorTransform, Vector2 offset, float followSpeed, float duration)
+        public void Take(Transform playerTransform, Vector2 offset, float followSpeed, float duration)
         {
-            if (canCarry && !isCarrying)
-            {
-                isCarrying = true;
-                player = jogadorTransform;
-                this.offset = offset;
-                this.followSpeed = followSpeed; // Atualiza a velocidade
+            if (player != null) return; // Evita pegar o mesmo objeto duas vezes
 
-                rb.gravityScale = 0;
-                rb.linearVelocity = Vector2.zero;
+            isCarrying = true;
+            player = playerTransform;
+            this.offset = offset;
+            this.followSpeed = followSpeed;
 
-                isRising = true;
-                riseTimer = 0f;
-                carryDuration = duration;
-                initialBoxPosition = rb.position;
-                targetBoxPosition = (Vector2)player.position + offset;
-            }
+            rb.gravityScale = 0;
+            rb.linearVelocity = Vector2.zero;
+
+            isRising = true;
+            riseTimer = 0f;
+            carryDuration = duration;
+            initialBoxPosition = rb.position;
+            targetBoxPosition = (Vector2)player.position + offset;
+            canCarry = false;
         }
 
         public void Release()
         {
-            if (isCarrying)
-            {
-                isCarrying = false;
-                isRising = false;
-                player = null;
-                rb.gravityScale = 5;
-            }
+            if (player == null) return;
+
+            player = null;
+            isCarrying = false;
+            isRising = false;
+            canCarry = true;
+            rb.gravityScale = 5;
         }
 
         private void FixedUpdate()
         {
-            if (isCarrying && player != null)
+            if (player != null)
             {
                 if (isRising)
                 {
@@ -73,25 +72,20 @@ namespace Space.Objects
                 }
                 else
                 {
-                   
                     Vector2 followTarget = (Vector2)player.position + offset;
                     Vector2 velocity = Vector2.zero;
-
                     Vector2 newPos = Vector2.Lerp(rb.position, followTarget, followSpeed * Time.fixedDeltaTime);
                     rb.MovePosition(newPos);
                 }
             }
         }
 
-        private void OnDrawGizmos()
-        {
-            if (isCarrying)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawWireSphere(transform.position, 0.5f);
-            }
-        }
+        public Transform GetTransform() => gameObject.transform;
 
-        public bool SetCanCarry(bool value) => canCarry = value;
+        public bool CanCarry() => canCarry;
+        public bool IsCarrying() => isCarrying;
+
+        public void SetSortingLayer(LayerMask layerMask) => spriteRenderer.sortingLayerName = layerMask.ToString();
+        public void SetSortingLayerOrder(int layerOrder) => spriteRenderer.sortingOrder = layerOrder;
     }
 }

@@ -1,8 +1,6 @@
 ﻿using Rickras.CoreSystem;
 using Space.CoreSystem;
-using Space.Objects;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 
 namespace Space.FSM
@@ -85,17 +83,18 @@ namespace Space.FSM
             InteractionInput = player.InputHandler.InteractionInput;
 
 
-            primaryActionInput = player.InputHandler.AttackInputs[0];
-
-
             if (jumpInput && player.JumpState.CanJump())
             {
                 stateMachine.ChangeState(player.JumpState);
             }
-            else if (InteractionInput && Interaction.GetInteractable<Box>())
+            else if (InteractionInput && player.CarryState.CanCarry() && Interaction.HasInteractable<ICarryable>() && Interaction.GetInteractable<ICarryable>().CanCarry() || InteractionInput && player.CarryState.CanCarry() && player.CarryState.IsCarrying())
             {
-                Movement.SetVelocityX(0);
-                stateMachine.ChangeState(player.CarryState); ;
+
+                stateMachine.ChangeState(player.CarryState);
+            }
+            else if (InteractionInput && Interaction.HasInteractable<IInteractable>() && !player.InteractState.isInteract)
+            {
+                stateMachine.ChangeState(player.InteractState);
             }
             else if (!isGrounded)
             {

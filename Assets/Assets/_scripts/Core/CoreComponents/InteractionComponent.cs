@@ -1,6 +1,6 @@
 using Space.CoreSystem;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+
 
 namespace Rickras.CoreSystem
 {
@@ -9,24 +9,26 @@ namespace Rickras.CoreSystem
         private CollisionSenses CollisionSenses => collisionSenses ?? core.GetCoreComponent(ref collisionSenses);
         private CollisionSenses collisionSenses;
 
-        [SerializeField] private float interactionRadius = 1f;
+        [SerializeField] private Collider2D col;
         [SerializeField] private UnityEngine.Transform interactionTransform; // Define quais objetos podem ser interagidos
         [SerializeField] private LayerMask interactionLayer; // Define quais objetos podem ser interagidos
 
-        public T GetInteractable<T>() where T : MonoBehaviour
+        protected override void Awake()
         {
-            if (core == null)
-            {
-                Debug.LogWarning("Core não foi inicializado no InteractionComponent!");
-                return null;
-            }
+            base.Awake();
 
-            Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(interactionTransform.position, interactionRadius, interactionLayer);
+            col = GetComponentInChildren<Collider2D>();
+        }
+
+        public T GetInteractable<T>() where T : class
+        {
+            Collider2D[] detectedObjects = Physics2D.OverlapBoxAll(col.bounds.center, col.bounds.size, 0, interactionLayer);
 
             foreach (Collider2D collider in detectedObjects)
             {
-                T interactable = collider.GetComponent<T>();
-                if (interactable != null)
+                MonoBehaviour component = collider.GetComponent<MonoBehaviour>();
+
+                if (component is T interactable)
                 {
                     return interactable;
                 }
@@ -35,7 +37,7 @@ namespace Rickras.CoreSystem
             return null;
         }
 
-        public bool HasInteractable<T>() where T : MonoBehaviour
+        public bool HasInteractable<T>() where T : class
         {
             return GetInteractable<T>() != null;
         }
@@ -43,7 +45,9 @@ namespace Rickras.CoreSystem
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(interactionTransform.position, interactionRadius);
+            Gizmos.DrawCube(col.bounds.center, col.bounds.size);
         }
+
+
     }
 }

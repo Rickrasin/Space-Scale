@@ -1,82 +1,103 @@
+﻿using Space.CoreSystem;
 using Space.FSM;
 using Space.Objects;
 using UnityEngine;
 
-public class PlayerCarryState : PlayerAbilityState
+
+namespace Space.FSM
 {
-    private Box currentBox;
-    private bool isCarrying;
-
-    public PlayerCarryState(PlayerScript player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
-        : base(player, stateMachine, playerData, animBoolName)
+    public class PlayerCarryState : PlayerAbilityState
     {
-    }
+        private bool canCarry = true;
 
-    public override void Enter()
-    {
-        base.Enter();
+        private bool playTimer;
+        private bool isRelease;
 
-        Movement.SetVelocityX(0);
+        private ICarryable currentObject;
 
-        if (currentBox == null)
+        public PlayerCarryState(PlayerScript player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
+            : base(player, stateMachine, playerData, animBoolName)
         {
-            currentBox = Interaction.GetInteractable<Box>();
-            isCarrying = true;
         }
 
-        if (currentBox != null)
+        public override void Enter()
         {
-            if (currentBox.isCarrying)
+            base.Enter();
+
+            canCarry = false;
+
+            if (currentObject == null)
             {
-                currentBox.Release();
-                AnimHandler.AnimatorSetBoolValue("isCarrying", false);
-                currentBox = null;
-            }
-            else if (currentBox.canCarry && !currentBox.isCarrying)
-            {
+                playTimer = true;
+                isRelease = false;
+
+                currentObject = Interaction.GetInteractable<ICarryable>();
+
+                Movement.SetVelocityX(0);
+
                 AnimHandler.AnimatorSetBoolValue("isCarrying", true);
 
                 Vector2 offset = new Vector2(
-                    Movement.FacingDirection < 1 ? -playerData.CarryPosOffset.y : playerData.CarryPosOffset.y,
-                    playerData.CarryPosOffset.y);
+                        Movement.FacingDirection < 1 ? -playerData.CarryPosOffset.y : playerData.CarryPosOffset.y,
+                        playerData.CarryPosOffset.y);
 
-                currentBox.Take(player.transform, offset, playerData.movementVelocity + playerData.drag, playerData.carryTime);
+                currentObject.Take(player.transform, offset, playerData.movementVelocity + playerData.drag, playerData.carryTime);
             }
-        }
-    }
-
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
-
-        Movement.SetVelocityX(0);
-
-        if (currentBox != null)
-        {
-            float diff = currentBox.transform.position.x - player.transform.position.x;
-            int desiredDirection = diff > 0 ? 1 : -1;
-
-            if (Movement.FacingDirection != desiredDirection)
+            else
             {
-                Movement.Flip();
+                Movement.SetVelocityX(0);
+                AnimHandler.AnimatorSetBoolValue("isCarrying", true);
+                currentObject.Release();
+                playTimer = true;
+                isRelease = true;
+
+
             }
+
         }
 
-        if (Time.time > startTime + playerData.carryTime)
+        public override void LogicUpdate()
         {
-            if (currentBox == null)
+            base.LogicUpdate();
+
+            Movement.SetVelocityX(0);
+
+            if (currentObject != null)
             {
-                isCarrying = false;
+                float diff = currentObject.GetTransform().position.x - player.transform.position.x;
+                int desiredDirection = diff > 0 ? 1 : -1;
+
+                if (Movement.FacingDirection != desiredDirection)
+                {
+                    Movement.Flip();
+                }
             }
-            isAbilityDone = true;
+
+            if (playTimer && !isRelease && Time.time > startTime + playerData.carryTime)
+            {
+                playTimer = false;
+                isAbilityDone = true;
+            }
+
+            if (playTimer && isRelease && Time.time > startTime + playerData.carryTime)
+            {
+                currentObject = null;
+                currentObject = null;
+                AnimHandler.AnimatorSetBoolValue("isCarrying", false);
+                isRelease = false;
+                playTimer = false;
+                isAbilityDone = true;
+
+            }
         }
-    }
 
-    public override void Exit()
-    {
-        base.Exit();
-    }
+        public override void Exit()
+        {
+            base.Exit();
+            canCarry = true;
+        }
 
-    public bool IsCarrying() => isCarrying;
+        public bool IsCarrying() => currentObject != null;
+        public bool CanCarry() => canCarry;
+    }
 }
-

@@ -6,27 +6,26 @@ TagManager:
   tags:
   - GameManager
   - UIManager
+  - Box
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ignore Collision
   - Water
   - UI
-  - 
   - Player
+  - 
   - Ground
-  - 
-  - Interaction
-  - 
+  - Obstacle
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
+  - Interactable
+  - Carryable
   - 
   - 
   - 
@@ -39,6 +38,8 @@ TagManager:
   - 
   - 
   - 
+  - Box
+  - BaseBox
   m_SortingLayers:
   - name: Default
     uniqueID: 0

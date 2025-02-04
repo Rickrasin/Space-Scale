@@ -1,5 +1,4 @@
 using Space.CoreSystem;
-using Space.FSM;
 using UnityEngine;
 
 
@@ -17,6 +16,8 @@ namespace Space.FSM
         public PlayerLandState LandState { get; private set; }
 
         public PlayerCarryState CarryState { get; private set; }
+
+        public PlayerInteractState InteractState { get; private set; }
 
 
 
@@ -51,6 +52,7 @@ namespace Space.FSM
             InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
             LandState = new PlayerLandState(this, StateMachine, playerData, "land");
             CarryState = new PlayerCarryState(this, StateMachine, playerData, "carry");
+            InteractState = new PlayerInteractState(this, StateMachine, playerData, "carry");
 
 
         }
