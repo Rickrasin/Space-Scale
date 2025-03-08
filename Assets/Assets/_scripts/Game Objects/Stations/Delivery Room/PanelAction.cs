@@ -1,8 +1,10 @@
 using UnityEngine;
 using System;
 using Space.Objects.Stations;
+using Space.Managers;
+using static Space.Managers.GameManager;
 
-public class ButtonAction : MonoBehaviour, IInteractable
+public class PanelAction : MonoBehaviour, IInteractable
 {
     private DeliveryStation deliveryStation;
 
@@ -13,7 +15,9 @@ public class ButtonAction : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        deliveryStation.Execute();
+
+
+        EventManager.TriggerEvent<GameState>(EventKey.ChangeGameEvent, GameState.SelectRecipe);
 
     }
 

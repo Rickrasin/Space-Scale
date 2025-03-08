@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de2136c73b388a44a2c6052942618a5, type: 3}
+  m_Name: Burguer Nebuloso
+  m_EditorClassIdentifier: 
+  recipeType: 4
+  recipeName: Burguer Nebuloso
+  spriteBox: {fileID: 0}
+  primaryIngredient: {fileID: 11400000, guid: 41fef1f3fcf0d4545873316cf95df403, type: 2}
+  secondaryIngredient: {fileID: 11400000, guid: 740fc6e2744724644829bd3481ccf754, type: 2}
+  foodSprite: {fileID: 0}

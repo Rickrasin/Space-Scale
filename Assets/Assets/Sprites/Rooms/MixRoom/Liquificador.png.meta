@@ -1,0 +1,1014 @@
+fileFormatVersion: 2
+guid: cc2b2d093b4be2d499cb24dae7252f29
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1316747951009547561
+    second: Liquificador_0
+  - first:
+      213: 6021419306344124869
+    second: Liquificador_1
+  - first:
+      213: -1383904861879505292
+    second: Liquificador_2
+  - first:
+      213: -8936452579689207164
+    second: Liquificador_3
+  - first:
+      213: 1177550314449580502
+    second: Liquificador_4
+  - first:
+      213: 4851244599872331362
+    second: Liquificador_5
+  - first:
+      213: 188270891201762306
+    second: Liquificador_6
+  - first:
+      213: -3998448755041685610
+    second: Liquificador_7
+  - first:
+      213: 7475502883694179887
+    second: Liquificador_8
+  - first:
+      213: 8647555884170196410
+    second: Liquificador_9
+  - first:
+      213: 91820843599949735
+    second: Liquificador_10
+  - first:
+      213: -1320605316362803073
+    second: Liquificador_11
+  - first:
+      213: 1687365113819002260
+    second: Liquificador_12
+  - first:
+      213: 7586857378277187314
+    second: Liquificador_13
+  - first:
+      213: -577297648113428472
+    second: Liquificador_14
+  - first:
+      213: 6607764003413561578
+    second: Liquificador_15
+  - first:
+      213: -2220111203096392793
+    second: Liquificador_16
+  - first:
+      213: 749203461654342332
+    second: Liquificador_17
+  - first:
+      213: 7050387354995980905
+    second: Liquificador_18
+  - first:
+      213: -5588772111139410614
+    second: Liquificador_19
+  - first:
+      213: 4829325776476029238
+    second: Liquificador_20
+  - first:
+      213: -2334742259563837447
+    second: Liquificador_21
+  - first:
+      213: 5725638318585298946
+    second: Liquificador_22
+  - first:
+      213: -818704114580038578
+    second: Liquificador_23
+  - first:
+      213: 2140226157316512521
+    second: Liquificador_24
+  - first:
+      213: -7884137149273754409
+    second: Liquificador_25
+  - first:
+      213: -8393354215712216708
+    second: Liquificador_26
+  - first:
+      213: -4507151355775912617
+    second: Liquificador_27
+  - first:
+      213: -8218904112128411800
+    second: Liquificador_28
+  - first:
+      213: -5092918405172274000
+    second: Liquificador_29
+  - first:
+      213: -8556896731645649070
+    second: Liquificador_30
+  - first:
+      213: -6261310800382875632
+    second: Liquificador_31
+  - first:
+      213: -1696587927435972437
+    second: Liquificador_32
+  - first:
+      213: -3264632995320941170
+    second: Liquificador_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Liquificador_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 207
+        width: 114
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925c5a6f847064210800000000000000
+      internalID: 1316747951009547561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 207
+        width: 114
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1125ec4f0609350800000000000000
+      internalID: 6021419306344124869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_2
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 207
+        width: 114
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e6cb04cd16bcce0800000000000000
+      internalID: -1383904861879505292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_3
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 207
+        width: 114
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a6083e9b75bf380800000000000000
+      internalID: -8936452579689207164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_4
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 207
+        width: 114
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1bae5a5cf775010800000000000000
+      internalID: 1177550314449580502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_5
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26e1ce5b245135340800000000000000
+      internalID: 4851244599872331362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_6
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20490a7c06fdc9200800000000000000
+      internalID: 188270891201762306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_7
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f232fba08a288c0800000000000000
+      internalID: -3998448755041685610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_8
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f26fffb04425eb760800000000000000
+      internalID: 7475502883694179887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_9
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5bd4b824a420870800000000000000
+      internalID: 8647555884170196410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_10
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af60cd1296364100800000000000000
+      internalID: 91820843599949735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_11
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f78e3bd26744cade0800000000000000
+      internalID: -1320605316362803073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_12
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 495719781a9ba6710800000000000000
+      internalID: 1687365113819002260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_13
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fe53c1b69ee94960800000000000000
+      internalID: 7586857378277187314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_14
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 808d78209d60df7f0800000000000000
+      internalID: -577297648113428472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_15
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae014170a5e73bb50800000000000000
+      internalID: 6607764003413561578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_16
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab03999f949031e0800000000000000
+      internalID: -2220111203096392793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_17
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba66643494b56a00800000000000000
+      internalID: 749203461654342332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_18
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96af07fd1f108d160800000000000000
+      internalID: 7050387354995980905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_19
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4dece02061b072b0800000000000000
+      internalID: -5588772111139410614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_20
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 631cd73f436350340800000000000000
+      internalID: 4829325776476029238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_21
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7ca90f844599fd0800000000000000
+      internalID: -2334742259563837447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_22
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20044ab07bd857f40800000000000000
+      internalID: 5725638318585298946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_23
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c5e4a02f063a4f0800000000000000
+      internalID: -818704114580038578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_24
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b99d5c95c93bd10800000000000000
+      internalID: 2140226157316512521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_25
+      rect:
+        serializedVersion: 2
+        x: 2567
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4b311e80be59290800000000000000
+      internalID: -7884137149273754409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_26
+      rect:
+        serializedVersion: 2
+        x: 2695
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79227a8fc0d48b80800000000000000
+      internalID: -8393354215712216708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_27
+      rect:
+        serializedVersion: 2
+        x: 2823
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7557e0ac8b16371c0800000000000000
+      internalID: -4507151355775912617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_28
+      rect:
+        serializedVersion: 2
+        x: 2951
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867b691714690fd80800000000000000
+      internalID: -8218904112128411800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_29
+      rect:
+        serializedVersion: 2
+        x: 3079
+        y: 0
+        width: 114
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc58a5a1b15259b0800000000000000
+      internalID: -5092918405172274000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_30
+      rect:
+        serializedVersion: 2
+        x: 3235
+        y: 38
+        width: 58
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f5f8a42cbcf3980800000000000000
+      internalID: -8556896731645649070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_31
+      rect:
+        serializedVersion: 2
+        x: 3363
+        y: 54
+        width: 58
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018acda300b5b19a0800000000000000
+      internalID: -6261310800382875632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_32
+      rect:
+        serializedVersion: 2
+        x: 3207
+        y: 0
+        width: 114
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba076f6d4428478e0800000000000000
+      internalID: -1696587927435972437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Liquificador_33
+      rect:
+        serializedVersion: 2
+        x: 3335
+        y: 0
+        width: 114
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8530e76691b1b2d0800000000000000
+      internalID: -3264632995320941170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Liquificador_0: 1316747951009547561
+      Liquificador_1: 6021419306344124869
+      Liquificador_10: 91820843599949735
+      Liquificador_11: -1320605316362803073
+      Liquificador_12: 1687365113819002260
+      Liquificador_13: 7586857378277187314
+      Liquificador_14: -577297648113428472
+      Liquificador_15: 6607764003413561578
+      Liquificador_16: -2220111203096392793
+      Liquificador_17: 749203461654342332
+      Liquificador_18: 7050387354995980905
+      Liquificador_19: -5588772111139410614
+      Liquificador_2: -1383904861879505292
+      Liquificador_20: 4829325776476029238
+      Liquificador_21: -2334742259563837447
+      Liquificador_22: 5725638318585298946
+      Liquificador_23: -818704114580038578
+      Liquificador_24: 2140226157316512521
+      Liquificador_25: -7884137149273754409
+      Liquificador_26: -8393354215712216708
+      Liquificador_27: -4507151355775912617
+      Liquificador_28: -8218904112128411800
+      Liquificador_29: -5092918405172274000
+      Liquificador_3: -8936452579689207164
+      Liquificador_30: -8556896731645649070
+      Liquificador_31: -6261310800382875632
+      Liquificador_32: -1696587927435972437
+      Liquificador_33: -3264632995320941170
+      Liquificador_4: 1177550314449580502
+      Liquificador_5: 4851244599872331362
+      Liquificador_6: 188270891201762306
+      Liquificador_7: -3998448755041685610
+      Liquificador_8: 7475502883694179887
+      Liquificador_9: 8647555884170196410
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

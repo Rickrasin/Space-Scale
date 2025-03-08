@@ -1,30 +1,41 @@
 using UnityEngine;
+using Space.Managers;
 
 namespace Space.Objects.Stations
 {
     public class DeliveryStation : MonoBehaviour
     {
         [SerializeField] private DeliverySlot[] deliverySlots;
-        [SerializeField] private GameObject boxPrefab;
-        [SerializeField] private ButtonAction buttonAction;
+        [SerializeField] private Sprite boxSprite;
+
+
 
         private void Start()
         {
             deliverySlots = GetComponentsInChildren<DeliverySlot>();
-            buttonAction = GetComponentInChildren<ButtonAction>();
+            EventManager.RegisterEvent<RecipeSO>(EventKey.SelectRecipe, InvokeBoxes);
 
         }
 
 
-        public void Execute()
+        public void InvokeBoxes(RecipeSO recipe)
         {
-            foreach (DeliverySlot slot in deliverySlots)
+
+            if (!deliverySlots[0].IsOccupied)
             {
-                if (!slot.IsOccupied)
-                {
-                    slot.SpawnBox(boxPrefab);
-                }
+                deliverySlots[0].SpawnBox(recipe.primaryIngredient, boxSprite);
+            }
+
+            if (!deliverySlots[1].IsOccupied)
+            {
+                deliverySlots[1].SpawnBox(recipe.secondaryIngredient, boxSprite);
             }
         }
+
+        private void OnDestroy()
+        {
+            EventManager.UnregisterEvent<RecipeSO>(EventKey.SelectRecipe, InvokeBoxes);
+        }
+
     }
 }

@@ -1,5 +1,7 @@
 using Space.CoreSystem;
+using Space.Managers;
 using UnityEngine;
+using static Space.Managers.GameManager;
 
 
 namespace Space.FSM
@@ -60,7 +62,7 @@ namespace Space.FSM
         private void Start()
         {
             Anim = GetComponent<Animator>();
-            InputHandler = GetComponent<PlayerInputHandler>();
+            InputHandler = GameManager.Instance.PlayerInputHandler;
             RB = GetComponent<Rigidbody2D>();
             MovementCollider = GetComponent<BoxCollider2D>();
 

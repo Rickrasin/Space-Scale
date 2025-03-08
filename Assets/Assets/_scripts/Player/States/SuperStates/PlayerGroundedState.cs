@@ -1,6 +1,8 @@
 ﻿using Rickras.CoreSystem;
 using Space.CoreSystem;
+using Space.Managers;
 using UnityEngine;
+using static Space.Managers.GameManager;
 
 
 namespace Space.FSM
@@ -76,12 +78,13 @@ namespace Space.FSM
         {
             base.LogicUpdate();
 
+
+
             xInput = player.InputHandler.NormInputX;
             yInput = player.InputHandler.NormInputY;
             jumpInput = player.InputHandler.JumpInput;
             dashInput = player.InputHandler.DashInput;
             InteractionInput = player.InputHandler.InteractionInput;
-
 
             if (jumpInput && player.JumpState.CanJump())
             {
@@ -89,7 +92,6 @@ namespace Space.FSM
             }
             else if (InteractionInput && player.CarryState.CanCarry() && Interaction.HasInteractable<ICarryable>() && Interaction.GetInteractable<ICarryable>().CanCarry() || InteractionInput && player.CarryState.CanCarry() && player.CarryState.IsCarrying())
             {
-
                 stateMachine.ChangeState(player.CarryState);
             }
             else if (InteractionInput && Interaction.HasInteractable<IInteractable>() && !player.InteractState.isInteract)
@@ -101,6 +103,7 @@ namespace Space.FSM
                 player.InAirState.StartCoyoteTime();
                 stateMachine.ChangeState(player.InAirState);
             }
+
 
         }
 

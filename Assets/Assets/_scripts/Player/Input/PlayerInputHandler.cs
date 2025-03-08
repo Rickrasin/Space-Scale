@@ -1,12 +1,9 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    private GameInputs playerInput;
+    public GameInputs GameInputs;
     private Camera cam;
 
     public Vector2 RawMovementInput { get; private set; }
@@ -16,6 +13,9 @@ public class PlayerInputHandler : MonoBehaviour
     public int NormInputY { get; private set; }
     public bool JumpInput { get; private set; }
     public bool JumpInputStop { get; private set; }
+
+    public bool OpenMenuInput { get; private set; }
+    public bool CloseMenuInput { get; private set; }
 
     public bool InteractionInput { get; private set; }
     public bool InteractionInputStop { get; private set; }
@@ -33,12 +33,12 @@ public class PlayerInputHandler : MonoBehaviour
     private float dashInputStartTime;
     private float interactionInputStartTime;
 
+
+
     private void Awake()
     {
-        playerInput = new GameInputs();
+        GameInputs = new GameInputs();
 
-        int count = Enum.GetValues(typeof(CombatInputs)).Length;
-        AttackInputs = new bool[count];
 
         cam = Camera.main;
 
@@ -53,23 +53,19 @@ public class PlayerInputHandler : MonoBehaviour
 
         OnInteractionInput();
 
-        OnPrimaryInput();
-
-
-
-
-
     }
 
     private void Update()
     {
+        CheckPauseInputs();
+
         CheckJumpInputHoldTime();
         CheckDashInputHoldTime();
         CheckInteractionInputHoldTime();
     }
     public void OnMoveInput()
     {
-        playerInput.Gameplay.Movement.performed += ctx =>
+        GameInputs.Gameplay.Movement.performed += ctx =>
         {
             RawMovementInput = ctx.ReadValue<Vector2>();
 
@@ -77,7 +73,7 @@ public class PlayerInputHandler : MonoBehaviour
             NormInputY = Mathf.RoundToInt(RawMovementInput.y);
         };
 
-        playerInput.Gameplay.Movement.canceled += ctx =>
+        GameInputs.Gameplay.Movement.canceled += ctx =>
         {
             RawMovementInput = ctx.ReadValue<Vector2>();
 
@@ -89,7 +85,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnJumpInput()
     {
-        playerInput.Gameplay.Jump.started += ctx =>
+        GameInputs.Gameplay.Jump.started += ctx =>
         {
             JumpInput = true;
             JumpInputStop = false;
@@ -97,7 +93,7 @@ public class PlayerInputHandler : MonoBehaviour
         };
 
 
-        playerInput.Gameplay.Jump.canceled += ctx =>
+        GameInputs.Gameplay.Jump.canceled += ctx =>
         {
             JumpInputStop = true;
         };
@@ -105,7 +101,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnInteractionInput()
     {
-        playerInput.Gameplay.Interaction.started += ctx =>
+        GameInputs.Gameplay.Interaction.started += ctx =>
         {
             InteractionInput = true;
             InteractionInputStop = false;
@@ -113,17 +109,14 @@ public class PlayerInputHandler : MonoBehaviour
         };
 
 
-        playerInput.Gameplay.Interaction.canceled += ctx =>
+        GameInputs.Gameplay.Interaction.canceled += ctx =>
         {
             InteractionInputStop = true;
         };
     }
 
-    public void OnPrimaryInput()
-    {
-        playerInput.Gameplay.PrimaryAction.started += ctx => AttackInputs[(int)CombatInputs.primary] = true;
-        playerInput.Gameplay.PrimaryAction.canceled += ctx => AttackInputs[(int)CombatInputs.primary] = false;
-    }
+
+
 
     public void UseJumpInput() => JumpInput = false;
 
@@ -131,6 +124,13 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void UseInteractionInput() => InteractionInput = false;
 
+
+
+    public void CheckPauseInputs()
+    {
+        OpenMenuInput = GameInputs.Gameplay.MenuOpen.WasPressedThisFrame();
+        CloseMenuInput = GameInputs.UI.MenuClose.WasPressedThisFrame();
+    }
 
     private void CheckJumpInputHoldTime()
     {
@@ -156,21 +156,16 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
+
+
     private void OnEnable()
     {
-        playerInput.Gameplay.Enable();
+        GameInputs.Gameplay.Enable();
     }
 
     private void OnDisable()
     {
-        playerInput.Gameplay.Disable();
+        GameInputs.Gameplay.Disable();
     }
-}
-
-
-public enum CombatInputs
-{
-    primary,
-    secondary
 }
 

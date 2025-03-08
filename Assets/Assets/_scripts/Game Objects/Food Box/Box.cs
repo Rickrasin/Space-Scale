@@ -9,7 +9,8 @@ namespace Space.Objects
         private Transform player;
 
         private Vector2 offset;
-        private bool canCarry = true;
+        protected bool canCarry = true;
+        [SerializeField] private Sprite boxSprite;
         [SerializeField] private float followSpeed = 10f;
 
         private bool isCarrying;
@@ -23,6 +24,11 @@ namespace Space.Objects
         {
             rb = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+
+            if (boxSprite != null) spriteRenderer.sprite = boxSprite;
+
+            canCarry = true;
+
         }
 
         public void Take(Transform playerTransform, Vector2 offset, float followSpeed, float duration)
@@ -84,8 +90,5 @@ namespace Space.Objects
 
         public bool CanCarry() => canCarry;
         public bool IsCarrying() => isCarrying;
-
-        public void SetSortingLayer(LayerMask layerMask) => spriteRenderer.sortingLayerName = layerMask.ToString();
-        public void SetSortingLayerOrder(int layerOrder) => spriteRenderer.sortingOrder = layerOrder;
     }
 }

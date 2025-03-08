@@ -25,16 +25,15 @@ namespace Space.FSM
             if (interactable != null)
             {
                 interactable.Interact();
+                isAbilityDone = true;
+
             }
             else
             {
                 Debug.LogWarning("Nenhum objeto interagível encontrado.");
             }
 
-
-
             isAbilityDone = true;
-
         }
 
 

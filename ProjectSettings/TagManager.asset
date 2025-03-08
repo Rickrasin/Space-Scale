@@ -47,13 +47,19 @@ TagManager:
   - name: BackGround
     uniqueID: 532806353
     locked: 0
+  - name: Station
+    uniqueID: 724597309
+    locked: 0
+  - name: Box
+    uniqueID: 3256874775
+    locked: 0
   - name: Player
     uniqueID: 3898325101
     locked: 0
   - name: Foreground
     uniqueID: 3697266331
     locked: 0
-  - name: Hud
+  - name: UI
     uniqueID: 1407239357
     locked: 0
   m_RenderingLayers:
